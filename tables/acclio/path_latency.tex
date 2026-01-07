@@ -1,0 +1,19 @@
+\begin{table}[t]
+    \small
+    \centering
+    % \vspace{-1em}
+    \begin{tabular}{cccc}
+        \toprule
+         & \textbf{RDMA Write} & \textbf{Fast Path} & \textbf{Slow Path} \\
+        \midrule
+        \textbf{64B} & 1.46 & 1.72 & 1.80 \\
+        \midrule
+        \textbf{1024B} & 2.10 & 2.31 & 2.43 \\
+        \midrule
+        \textbf{4096B} & 2.54 & 3.32 & 3.76 \\
+        \bottomrule
+    \end{tabular}
+    \caption{\textcolor{blue}{Latency metrics (\textmu{}s) of \sys in the fast and slow paths, tested with ib\_write\_lat tool in perftest. The baseline is the latency of RDMA write.}}
+    \label{tab:path_latency}
+    \vspace{-1em}
+\end{table}

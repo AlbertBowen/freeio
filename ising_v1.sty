@@ -1,0 +1,347 @@
+\usepackage{booktabs}
+\usepackage{xspace}
+\usepackage{xparse}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{url}
+\usepackage{caption}
+% \usepackage{tikz}
+
+% parab
+\newcommand{\paraspace}{\vspace{0.03in}}
+\newcommand{\parab}[1]{\paraspace\noindent{\bf #1}\xspace}
+
+% icompact
+\newenvironment{icompact}{
+  \begin{list}{$\bullet$}{
+    \parsep 1pt plus 1pt
+    \partopsep 1pt plus 1pt
+    \topsep 1pt plus 2pt minus 1pt
+    \itemsep 1.5pt plus 1pt
+    \parskip 0pt plus 2pt
+    \leftmargin 0.2in}
+       }
+  {\normalsize\end{list}}
+
+% listing style
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{frame=tb,
+  language=C,
+  aboveskip=1mm,
+  belowskip=1mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\scriptsize\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+% tabularx column type
+\newcolumntype{b}{>{\hsize=.75\hsize}X}
+\newcolumntype{q}{>{\hsize=.59\hsize}X}
+\newcolumntype{m}{>{\hsize=.5\hsize}X}
+\newcolumntype{d}{>{\hsize=.45\hsize}X}
+\newcolumntype{w}{>{\hsize=.3\hsize}X}
+\newcolumntype{s}{>{\hsize=.25\hsize}X}
+\newcolumntype{g}{>{\hsize=.17\hsize}X}
+\newcolumntype{o}{>{\hsize=.15\hsize}X}
+\newcolumntype{x}{>{\hsize=.14\hsize}X}
+\newcolumntype{n}{>{\hsize=.09\hsize}X}
+
+
+\definecolor{myred}{HTML}{BF4B25}
+\definecolor{mygreen}{HTML}{82B366}
+\definecolor{myyellow}{HTML}{D6B656}
+\definecolor{myblue}{HTML}{6C8EBF}
+
+\newcommand{\myred}[1]{%
+\if\submission0%
+{\color{myred}#1}%
+\else
+#1
+\fi
+}
+
+\newcommand{\mygreen}[1]{%
+\if\submission0%
+{\color{mygreen}#1}%
+\else
+#1
+\fi
+}
+
+\newcommand{\myyellow}[1]{%
+\if\submission0%
+{\color{myyellow}#1}%
+\else
+#1
+\fi
+}
+
+\newcommand{\myblue}[1]{%
+\if\submission0%
+{\color{myblue}#1}%
+\else
+#1
+\fi
+}
+
+% auto highlight
+\newcommand{\highlight}[1]{%
+\if\submission0%
+{\color{red}#1}%
+\else
+#1
+\fi
+}
+
+% auto edit
+\newcommand{\edit}[1]{%
+\if\submission0%
+{\color{blue}#1}%
+\else
+#1
+\fi
+}
+% auto edit
+\newcommand{\gray}[1]{%
+\if\submission0%
+{\color{gray}#1}%
+\else
+#1
+\fi
+}
+
+% bowen
+\newcommand{\bowen}[1]{%
+\if\submission0%
+{\color{teal}#1}%
+\else
+#1
+\fi
+}
+
+\newcommand{\appendixrelated}[1]{%
+\if\allowappendix1%
+#1
+\else
+\fi
+}
+
+% \emptycirc, \halfcirc, \fullcirc
+\newcommand*\emptycirc[1][1ex]{\tikz\draw (0,0) circle (#1);} 
+\newcommand*\halfcirc[1][1ex]{%
+  \begin{tikzpicture}
+  \draw[fill] (0,0)-- (90:#1) arc (90:270:#1) -- cycle ;
+  \draw (0,0) circle (#1);
+  \end{tikzpicture}}
+\newcommand*\fullcirc[1][1ex]{\tikz\fill (0,0) circle (#1);}
+
+% \eg, \etc, \ie
+\makeatletter
+\DeclareRobustCommand\onedot{\futurelet\@let@token\@onedot}
+\def\@onedot{\ifx\@let@token.\else.\null\fi\xspace}
+\def\eg{\emph{e.g}\onedot}
+\def\ie{\emph{i.e}\onedot}
+\def\etc{\emph{etc}\onedot}
+\def\etal{\emph{et al\onedot}}
+\makeatother
+
+% appendix figure
+\makeatletter
+\DeclareDocumentEnvironment{appendixfig}{}{
+   \par\medskip\noindent
+   \begin{minipage}{\linewidth}
+   \def\@captype{figure}
+   \centering
+}
+{
+\end{minipage}
+\par\bigskip
+}
+\makeatother
+
+% appendix table
+\makeatletter
+\DeclareDocumentEnvironment{appendixtab}{}{
+   \par\medskip\noindent
+   \begin{minipage}{\linewidth}
+   \def\@captype{table}
+   \centering
+}
+{
+\end{minipage}
+\par\bigskip
+}
+\makeatother
+
+% Calculate page difference
+\newcommand{\pagedifference}[2]{%
+  \number\numexpr\getpagerefnumber{#2}-\getpagerefnumber{#1} + 1\relax}
+
+% % Change caption vspace
+\captionsetup[table]{aboveskip=2pt plus 2pt minus 2pt}
+\captionsetup[table]{belowskip=2pt plus 0pt minus 0pt}
+
+% \captionsetup[table*]{aboveskip=2pt plus 2pt minus 2pt}
+% \captionsetup[table*]{belowskip=2pt plus 0pt minus 0pt}
+
+\captionsetup[figure]{aboveskip=2pt plus 2pt minus 2pt}
+\captionsetup[figure]{belowskip=-7pt plus 0pt minus 0pt}
+
+\captionsetup[figure*]{aboveskip=3pt plus 2pt minus 2pt}
+\captionsetup[figure*]{belowskip=-7pt plus 0pt minus 0pt}
+
+\captionsetup[subfigure]{aboveskip=0pt plus 2pt minus 2pt}
+\captionsetup[subfigure]{belowskip=0pt plus 0pt minus 0pt}
+
+% \captionsetup[lstlisting]{aboveskip=2pt plus 2pt minus 2pt}
+% \captionsetup[lstlisting]{belowskip=0pt plus 0pt minus 0pt}
+
+% Change section subsection vspace
+% \titlespacing*{\section}
+% {0pt}{3pt plus 0pt minus 1pt}{2pt plus 0pt minus 1pt}
+
+% \titlespacing*{\subsection}
+% {0pt}{2pt plus 0pt minus 1pt}{2pt plus 0pt minus 1pt}
+
+% \titlespacing*{\subsubsection}
+% {0pt}{2pt plus 0pt minus 1pt}{1pt plus 0pt minus 0pt}
+
+% Citation ref
+\newcommand*{\figref}[2][]{%
+  \hyperref[{#2}]{%
+    Figure~\ref*{#2}%
+    \ifx\\#1\\%
+    \else
+      \,#1%
+    \fi
+  }%
+}
+  
+\newcommand*{\tabref}[2][]{%
+  \hyperref[{#2}]{%
+    Table~\ref*{#2}%
+    \ifx\\#1\\%
+    \else
+      \,#1%
+    \fi
+  }%
+}
+  
+\newcommand*{\equref}[2][]{%
+  \hyperref[{#2}]{%
+    Equation~\ref*{#2}%
+    \ifx\\#1\\%
+    \else
+      \,#1%
+    \fi
+  }%
+}
+
+\newcommand*{\secref}[2][]{%
+  \hyperref[{#2}]{%
+    \S\ref*{#2}%
+    \ifx\\#1\\%
+    \else
+      \,#1%
+    \fi
+  }%
+}
+
+\newcommand*{\algref}[2][]{%
+  \hyperref[{#2}]{%
+    Algorithm~\ref*{#2}%
+    \ifx\\#1\\%
+    \else
+      \,#1%
+    \fi
+  }%
+}
+
+\newcommand*{\appref}[2][]{%
+  \hyperref[{#2}]{%
+    Appendix~\ref*{#2}%
+    \ifx\\#1\\%
+    \else
+      \,#1%
+    \fi
+  }%
+}
+
+\newcommand*{\lstref}[2][]{%
+  \hyperref[{#2}]{%
+    Listing~\ref*{#2}%
+    \ifx\\#1\\%
+    \else
+      \,#1%
+    \fi
+  }%
+}
+
+% URL Break
+\def\UrlBigBreaks{\do\/\do-\do:}
+
+% Default Values
+\def\submission{0}
+
+% System name
+\newcommand{\sys}{\texttt{FreeIO}\xspace}
+
+% circle number
+\newcommand{\circN}[1]{%
+  \tikz[baseline=(char.base)]{
+    \node[shape=circle,draw,inner sep=0.5pt] (char) {#1};
+  }}
+
+  \newcommand{\circled}[2]{
+    \tikz[baseline=(char.base)]{
+      \node[shape=circle,draw,fill=#1,text=white,inner sep=1pt] (char) {#2};
+    }
+  }
+
+% New lstlisting language
+\definecolor{delim}{RGB}{20,105,176}
+\definecolor{numb}{RGB}{106, 109, 32}
+\definecolor{string}{rgb}{0.64,0.08,0.08}
+
+\lstdefinelanguage{json}{
+    numbers=left,
+    numberstyle=\small,
+    frame=single,
+    rulecolor=\color{black},
+    showspaces=false,
+    showtabs=false,
+    breaklines=true,
+    postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{gray}\hookrightarrow\space}},
+    breakatwhitespace=true,
+    basicstyle=\ttfamily\small,
+    upquote=true,
+    morestring=[b]",
+    stringstyle=\color{string},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}

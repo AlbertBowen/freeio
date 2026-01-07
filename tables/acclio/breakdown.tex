@@ -1,0 +1,18 @@
+\begin{table}[t]
+    \small
+    \centering
+    \begin{tabular}{cccc}
+    \toprule
+    \textbf{Ratio} & \textbf{Baseline} & \textbf{\sys w/o optimization} & \textbf{\sys} \\
+    \midrule
+    3:1 & 31.678 (-) & 45.299 (1.53$\times$) & 61.570 (1.94$\times$) \\
+    \midrule
+    1:1 & 20.521 (-) & 28.319 (1.38$\times$) & 37.373 (1.82$\times$) \\
+    \midrule
+    1:3 & 12.429 (-) &  14.418 (1.16$\times$) & 21.305 (1.71$\times$) \\
+    \bottomrule
+    \end{tabular}
+    \caption{Throughput (Mpps) of \texttt{CPU-involved} flows and speedup of \sys with and without fast/slow path optimizations on mixed I/O flows. The ratio refers to the ratio of \texttt{CPU-involved} to \texttt{CPU-bypass} flows. There are 8 flows in total.}
+    \vspace{-1.5em}
+    \label{tab:eval_opt_breakdown}
+\end{table}

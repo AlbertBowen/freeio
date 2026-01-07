@@ -1,0 +1,17 @@
+\begin{table}[t]
+    \footnotesize
+    \centering
+    \begin{tabular}{c|ccc}
+        \toprule
+        \textbf{Contention point} & \textbf{Core number} & \textbf{Queue number} & \textbf{Batch size} \\
+        \midrule
+        \textbf{C1} & $\downarrow$ & $-$ & $\uparrow$ \\
+        \textbf{C2} & $\downarrow$ & $-$ & $-$ \\
+        \textbf{C3} & $-$ & $\downarrow$ & $-$ \\
+        \textbf{C4} & $\uparrow$ & $\downarrow$ & $\downarrow$ \\
+        \bottomrule
+    \end{tabular}	
+    \caption{Guidelines for tuning configurations to alleviate contention points that degrade memory efficiency in the host data path. The symbols $\uparrow$, $\downarrow$, and $-$ represent increasing, decreasing, and no change in the configuration values, respectively.}
+    \vspace{-1.6em}
+    \label{tab:guidelines}
+\end{table}

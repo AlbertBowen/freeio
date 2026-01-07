@@ -1,0 +1,17 @@
+\begin{table}[t]
+    \footnotesize
+    \centering
+    \begin{tabular}{c|c|c}
+        \toprule
+        & \textbf{Longest elapsed time} & \textbf{Expected impact after tuning} \\
+        \midrule
+        \textbf{C1} & Pipeline stall & The duration of stall $\downarrow$ \\
+        \textbf{C2} & Application/dispatcher stage & LLC miss rate $\downarrow$ \\
+        \textbf{C3} & NIC stage & IO miss rate $\downarrow$ \\
+        \textbf{C4} & Application/dispatcher stage & LLC miss rate $\downarrow$ \\
+        \bottomrule
+    \end{tabular}	
+    \caption{\sys Diagnosis identifies the primary contention points by measuring the longest pipeline stages or stalls. The symbols $\downarrow$ represent the expected decrease in impacts after applying corresponding guidelines.}
+    \vspace{0em}
+    \label{tab:contention_point}
+\end{table}

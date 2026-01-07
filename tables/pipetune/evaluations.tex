@@ -1,0 +1,29 @@
+\begin{table}[t]
+    %\scriptsize
+    \centering
+    \resizebox{\columnwidth}{!}{
+    \begin{tabular}{ccccc}       
+        \toprule
+        \multirow{2}{*}{\textbf{Settings}} & \multicolumn{2}{c}{\textbf{eRPC}} & \multicolumn{2}{c}{\textbf{Optimized eRPC}} \\
+        \cline{2-5}
+        \rule{0pt}{2.5ex}
+        & P99 & P99.9 & P99 & P99.9\\
+        %\cline{1-7}
+        \midrule
+        DPDK  & 109.28 & 128.94  & 49.5 ($\downarrow 2.2\times$) & 57.0 ($\downarrow 2.3\times$) \\
+        RDMA  & 130.75 & 200.06 & 69.5 ($\downarrow 1.9\times$) & 73.7 ($\downarrow 2.7\times$) \\        
+        \toprule
+        \multirow{2}{*}{\textbf{Settings}} & \multicolumn{2}{c}{\textbf{OvS}} & \multicolumn{2}{c}{\textbf{Optimized OvS}} \\
+        \cline{2-5}
+        \rule{0pt}{2.5ex}
+        & P99 & P99.9  & P99 & P99.9\\
+        \midrule
+        128B packet  & 110.1 & 130.8 & 71.8 ($\downarrow 1.5\times$) & 82.3 ($\downarrow 1.6\times$) \\
+        512B packet & 120.0 & 138.9  & 39.0 ($\downarrow 3.1\times$) & 43.7 ($\downarrow 3.2\times$) \\
+        1024B packet & 139.8 & 169.8  & 39.0 ($\downarrow 3.6\times$) & 46.0 ($\downarrow 3.7\times$) \\
+        \bottomrule
+    \end{tabular}}
+    \caption{Latency(us) of original eRPC/OvS and optimized eRPC/OvS when changing workloads. All experiments are conducted over the 200Gbps servers. The symbol $\downarrow$ indicates the speedup factor.}
+    \label{tab:eval_lat}
+    \vspace{-1.2em}
+\end{table}

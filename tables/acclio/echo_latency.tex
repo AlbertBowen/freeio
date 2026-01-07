@@ -1,0 +1,24 @@
+\begin{table*}[t]
+    % \scriptsize
+    \small
+    \centering
+    \renewcommand{\arraystretch}{1.1}
+    \resizebox{2\columnwidth}{!}{
+    \begin{tabular}{ccccccc}       
+        \toprule
+        \multirow{2}{*}{\textbf{Datapaths}} & \multicolumn{2}{c}{\textbf{eRPC(DPDK)}} & \multicolumn{2}{c}{\textbf{eRPC(RDMA)}}  & \multicolumn{2}{c}{\textbf{LineFS}} \\
+        \cline{2-7}
+        \rule{0pt}{2.5ex}
+        & P99 & P99.9 & P99 & P99.9 & P99 & P99.9 \\
+        %\cline{1-7}
+        \midrule
+        Baseline        & 116.87 & 126.94 & 137.31  & 184.03& 276.29 & 432.81 \\
+        HostCC          & 102.14 ($\downarrow 1.14\times$) &  107.39  ($\downarrow 1.18\times$)& 121.58 ($\downarrow 1.13\times$) & 169.45 ($\downarrow 1.09\times$)& 154.28  ($\downarrow 1.79\times$)& 283.36  ($\downarrow 1.53\times$) \\       
+        ShRing          & 64.05 ($\downarrow 1.82\times$) & 85.42 ($\downarrow 1.49\times$)   & 94.82 ($\downarrow 1.45\times$)   & 137.36 ($\downarrow 1.34\times$)& 121.48 ($\downarrow 2.27\times$) & 162.50 ($\downarrow 2.66\times$)\\
+        CEIO            & 46.19 ($\downarrow 2.53\times$) & 53.08 ($\downarrow 2.39\times$)  & 69.50 ($\downarrow 1.98\times$)   & 73.70 ($\downarrow 2.50\times$)    & 66.28 ($\downarrow 4.17\times$)   & 91.43 ($\downarrow 4.73\times$)\\
+        \bottomrule
+    \end{tabular}}
+    \caption{P99 and P99.9 latency (\textmu{}s) of \sys and baseline approaches under the 512B echo workload. The symbol $\downarrow$ denotes the latency reduction factor}
+    \label{tab:eval_lat}
+    \vspace{-1em}
+\end{table*}

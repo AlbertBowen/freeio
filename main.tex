@@ -1,0 +1,195 @@
+% -----------------------------SIGCOMM format-----------------------------
+\documentclass[sigconf,10pt]{acmart}
+\pagenumbering{gobble}
+% \pagestyle{empty}
+% \usepackage{titlesec}
+% \titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+% Copyright
+\renewcommand\footnotetextcopyrightpermission[1]{} % removes footnote with conference info
+\setcopyright{none}
+% \setcopyright{acmcopyright}
+% \setcopyright{acmlicensed}
+% \setcopyright{rightsretained}
+% \setcopyright{usgov}
+% \setcopyright{usgovmixed}
+% \setcopyright{cagov}
+% \setcopyright{cagovmixed}
+% \settopmatter{printacmref=true, printccs=true, printfolios=true}
+\settopmatter{printacmref=false, printccs=false, printfolios=false}
+
+% DOI
+% \acmDOI{https://doi.org/10.1145/3718958.3750488.}
+% ISBN
+% \acmISBN{}
+% Conference
+% \acmConference[ACM SIGCOMM'25, September 8-11, Coimbra, Portugal]{}
+% \acmYear{2025}
+% \copyrightyear{}
+
+
+
+
+
+
+% \acmYear{2025}\copyrightyear{2025}
+% \setcopyright{acmlicensed}
+% \acmConference[SIGCOMM '25]{ACM SIGCOMM 2025 Conference}{September 8--11, 2025}{Coimbra, Portugal}
+% \acmBooktitle{ACM SIGCOMM 2025 Conference (SIGCOMM '25), September 8--11, 2025, Coimbra, Portugal}
+% \acmDOI{10.1145/3718958.3750488}
+% \acmISBN{979-8-4007-1524-2/25/09}
+
+
+
+% {} with no args suppresses printing of the price
+
+
+\acmPrice{}
+
+% -----------------------------NSDI format-----------------------------
+% \documentclass[letterpaper,twocolumn,10pt]{article}
+% \usepackage{usenix-2020-09}
+% %don't want date printed
+% \date{}
+
+% \usepackage{ccsxml}
+% for formatting
+\usepackage{ising_v1}
+% for content
+\usepackage{tikz}
+\usepackage{amsmath,amsfonts,mathrsfs,bm}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{refcount}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{comment}
+\usepackage{afterpage}
+\usepackage{bbding}
+\usepackage{pifont}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{textcomp}
+\usepackage[flushleft]{threeparttable}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{diagbox}
+% \usepackage{xspace}
+% \renewcommand{\algorithmicindent}{1.5em}
+% % \renewcommand{\algorithmicend}{}
+% \renewcommand{\algorithmicend}{}
+% \renewcommand{\algorithmicendif}{}
+% \renewcommand{\algorithmicendfor}{}
+% \usepackage[ruled,vlined]{algorithm2e}
+
+% User-defined commands
+% \newcommand{\zjx}[1]{{\color{blue}[junxue: #1]}}
+% \newcommand{\tianhan}[1]{{\color{brown}[tianhan: #1]}}
+% \newcommand{\qj}[1]{{\color{red}[qijing: #1]}}
+% \newcommand{\zhuobin}[1]{{\color{orange}[zhuobin: #1]}}
+
+% \renewcommand{\textcolor}[2]{\textcolor{black}{#2}}
+
+\let\origtextcolor\textcolor
+\renewcommand{\textcolor}[2]{\origtextcolor{black}{#2}}
+
+
+\newcommand{\mbuf}{\texttt{mbuf}\xspace}
+\newcommand{\mbufs}{\texttt{mbufs}\xspace}
+\newcommand{\circleNumber}[1]{%
+  \tikz[baseline=(char.base)]{
+    \node[shape=circle,draw,inner sep=1pt] (char) {#1};
+  }
+}
+
+\floatplacement{lstlisting}{t}
+\def\allowappendix{1}
+
+\begin{document}
+%-------------------------------------------------------------------------------
+% \title{\Large \bf \sys: A Cache-Efficient Network I/O Architecture for NIC-CPU Data Path}
+\title{FreeIO: Enabling Zero-Copy, Sub-RTT GPU Communication for MoE Inference}
+
+
+% \renewcommand{\shortauthors}{Bowen Liu et al.}
+\author{Paper \#,  pages body,  pages total}
+\renewcommand{\shortauthors}{X.et al.}
+% \input{authors.tex} 
+\input{sections/abstract.tex}
+
+\begin{CCSXML}
+  <ccs2012>
+     <concept>
+         <concept_id>10003033.10003106.10003110</concept_id>
+         <concept_desc>Networks~Data center networks</concept_desc>
+         <concept_significance>500</concept_significance>
+         </concept>
+     <concept>
+         <concept_id>10011007.10010940.10010941.10010949</concept_id>
+         <concept_desc>Software and its engineering~Operating systems</concept_desc>
+         <concept_significance>500</concept_significance>
+         </concept>
+     <concept>
+         <concept_id>10003033.10003034.10003035</concept_id>
+         <concept_desc>Networks~Network design principles</concept_desc>
+         <concept_significance>500</concept_significance>
+         </concept>
+   </ccs2012>
+\end{CCSXML}
+  
+\ccsdesc[500]{Networks~Data center networks}
+% \ccsdesc[500]{Software and its engineering~Operating systems}
+% \ccsdesc[500]{Networks~Network design principles}
+
+
+\keywords{Network I/O}
+
+
+
+
+\maketitle
+
+\label{counter:body-start}
+% \fancyhead{}{}
+\input{sections/introduction.tex}
+\input{sections/background.tex}
+% \input{sections/motivation.tex}
+\input{sections/overview.tex}
+\input{sections/design.tex}
+\input{sections/implementation.tex}
+\input{sections/evaluation.tex}
+\input{sections/related_work.tex}
+\input{sections/conclusion.tex}
+
+
+
+
+
+\label{counter:body-stop}
+
+% \clearpage
+\label{counter:ref-start}
+\bibliographystyle{ACM-Reference-Format}
+% \bibliographystyle{hindawi_bib_style}
+\bibliography{reference}
+\label{counter:ref-stop}
+% \appendixrelated{
+% % \label{counter:app-start}
+% % \input{sections/discussion.tex}
+% % \label{counter:app-stop}
+% }
+\clearpage
+
+% \appendixrelated{
+% \clearpage
+
+% }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%  LocalWords:  endnotes includegraphics fread ptr nobj noindent
+%%  LocalWords:  pdflatex acks

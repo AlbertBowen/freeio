@@ -1,0 +1,45 @@
+% \renewcommand{\arraystretch}{2.0}
+% \begin{table}[t]
+%     \scriptsize
+%     \centering
+%     \resizebox{\columnwidth}{!}{
+%     \begin{tabular}{c|c|c|c}       
+%         \specialrule{1.5pt}{0pt}{0pt}
+%         & Reactive Rate Control & Fixed Buffer & \sys \\
+%         %\cline{1-7}
+%         \midrule
+%         Limitation         & slow response & packet loss & slow path \\
+%         \hline
+%         Result      & \makecell{unavoidable \\ LLC miss} & \makecell{unexpectedly\\ trigger CCA} & c1c2 \\       
+%         \hline
+%         Performance     & \makecell{I/O process\\degradation} & \makecell{network rate \\ degradation} & \makecell{line-rate\\ after design} \\
+%         \specialrule{1.5pt}{0pt}{0pt}
+%     \end{tabular}}
+%     \caption{Comparison of \sys with traditional roadmaps.}
+%     \label{tab:compare}
+%     % \vspace{-1.5em}
+% \end{table}
+\begin{table*}[t]
+    \footnotesize
+    \centering
+    \begin{tabular}{c|c|c}
+        \toprule
+        & {\small \textbf{Limitations}} & {\small \textbf{I/O Performance}} \\
+        \midrule
+        \makecell{\textbf{Reactive Rate Control}\\(represented as HostCC)} & 
+        \makecell{The \myred{slow response} limitation incurs unavoidable LLC misses} & 
+        \makecell{Slow I/O path processing rate} \\
+        \midrule
+        \makecell{\textbf{Fixed Buffer}\\(represented as ShRing)} & 
+        \makecell{Unexpectedly trigger CCA to avoid \myred{packet loss}} & 
+        \makecell{Slow network transmission rate} \\
+        \midrule
+        \textbf{\sys} & 
+        \makecell{Introduce \textbf{proactive rate control} and \textbf{elastic buffer} to address previous limitations} & 
+        \makecell{\textbf{\myred{Near line-rate}} performance} \\
+        \bottomrule
+    \end{tabular}
+    \caption{Comparison of different I/O optimization approaches}
+    \label{tab:compare}
+    % \vspace{-0.1in}
+\end{table*}
