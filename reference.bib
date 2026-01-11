@@ -499,10 +499,28 @@
 @misc{NCCL,
   title={NCCL github repository},
   author={NVIDIA},
-  year={2025},
-  note={Accessed 2025-01-01},
+  year={2026},
+  note={Accessed 2026-01-01},
   howpublished={\url{https://github.com/NVIDIA/nccl}}
 }
+
+@misc{deepep,
+  title={DeepEP github repository},
+  author={DeepSeek-AI},
+  year={2026},
+  note={Accessed 2026-01-01},
+  howpublished={\url{https://github.com/deepseek-ai/DeepEP}}
+}
+
+@misc{nvshmem,
+  title={NVSHMEM github repository},
+  author={NVIDIA},
+  year={2026},
+  note={Accessed 2026-01-01},
+  howpublished={\url{https://github.com/NVIDIA/nvshmem}}
+}
+
+
 
 @misc{Spark,
   title={Spark github repository},
@@ -740,6 +758,14 @@
   note={Accessed 2025-01-01},
   howpublished={\url{https://docs.nvidia.com/cuda/gpudirect-rdma/}}
 }
+
+@misc{nvlink,
+  author={NVIDIA},
+  year={2026},
+  note={Accessed 2026-01-01},
+  howpublished={\url{https://www.nvidia.com/en-us/data-center/nvlink/}}
+}
+
 
 
 
@@ -1019,3 +1045,139 @@
   pages={91--108},
   year={2025}
 }
+
+
+#-------------------------MoE 
+
+@inproceedings{mixnet,
+  title={Mixnet: A runtime reconfigurable optical-electrical fabric for distributed mixture-of-experts training},
+  author={Liao, Xudong and Sun, Yijun and Tian, Han and Wan, Xinchen and Jin, Yilun and Wang, Zilong and Ren, Zhenghang and Huang, Xinyang and Li, Wenxue and Tse, Kin Fai and others},
+  booktitle={Proceedings of the ACM SIGCOMM 2025 Conference},
+  pages={554--574},
+  year={2025}
+}
+
+@article{deepseek-v3,
+  title={Deepseek-v3 technical report},
+  author={Liu, Aixin and Feng, Bei and Xue, Bing and Wang, Bingxuan and Wu, Bochao and Lu, Chengda and Zhao, Chenggang and Deng, Chengqi and Zhang, Chenyu and Ruan, Chong and others},
+  journal={arXiv preprint arXiv:2412.19437},
+  year={2024}
+}
+
+@article{qwen,
+  title={Qwen technical report},
+  author={Bai, Jinze and Bai, Shuai and Chu, Yunfei and Cui, Zeyu and Dang, Kai and Deng, Xiaodong and Fan, Yang and Ge, Wenbin and Han, Yu and Huang, Fei and others},
+  journal={arXiv preprint arXiv:2309.16609},
+  year={2023}
+}
+
+
+@inproceedings{deepspeed,
+  title={Deepspeed-moe: Advancing mixture-of-experts inference and training to power next-generation ai scale},
+  author={Rajbhandari, Samyam and Li, Conglong and Yao, Zhewei and Zhang, Minjia and Aminabadi, Reza Yazdani and Awan, Ammar Ahmad and Rasley, Jeff and He, Yuxiong},
+  booktitle={International conference on machine learning},
+  pages={18332--18346},
+  year={2022},
+  organization={PMLR}
+}
+
+@article{gshard,
+  title={Gshard: Scaling giant models with conditional computation and automatic sharding},
+  author={Lepikhin, Dmitry and Lee, HyoukJoong and Xu, Yuanzhong and Chen, Dehao and Firat, Orhan and Huang, Yanping and Krikun, Maxim and Shazeer, Noam and Chen, Zhifeng},
+  journal={arXiv preprint arXiv:2006.16668},
+  year={2020}
+}
+
+
+@article{switchtransformer,
+  title={Switch transformers: Scaling to trillion parameter models with simple and efficient sparsity},
+  author={Fedus, William and Zoph, Barret and Shazeer, Noam},
+  journal={Journal of Machine Learning Research},
+  volume={23},
+  number={120},
+  pages={1--39},
+  year={2022}
+}
+
+@inproceedings{glam,
+  title={Glam: Efficient scaling of language models with mixture-of-experts},
+  author={Du, Nan and Huang, Yanping and Dai, Andrew M and Tong, Simon and Lepikhin, Dmitry and Xu, Yuanzhong and Krikun, Maxim and Zhou, Yanqi and Yu, Adams Wei and Firat, Orhan and others},
+  booktitle={International conference on machine learning},
+  pages={5547--5569},
+  year={2022},
+  organization={PMLR}
+}
+
+@inproceedings{janus,
+  title={Janus: A unified distributed training framework for sparse mixture-of-experts models},
+  author={Liu, Juncai and Wang, Jessie Hui and Jiang, Yimin},
+  booktitle={Proceedings of the ACM SIGCOMM 2023 Conference},
+  pages={486--498},
+  year={2023}
+}
+
+@inproceedings{undermoecomm,
+  title={Understanding communication characteristics of distributed training},
+  author={Li, Wenxue and Liu, Xiangzhou and Li, Yuxuan and Jin, Yilun and Tian, Han and Zhong, Zhizhen and Liu, Guyue and Zhang, Ying and Chen, Kai},
+  booktitle={Proceedings of the 8th Asia-Pacific Workshop on Networking},
+  pages={1--8},
+  year={2024}
+}
+
+
+#--------------------moe inference-------------------------
+
+@inproceedings{deepspeed-inference,
+  title={Deepspeed-inference: enabling efficient inference of transformer models at unprecedented scale},
+  author={Aminabadi, Reza Yazdani and Rajbhandari, Samyam and Awan, Ammar Ahmad and Li, Cheng and Li, Du and Zheng, Elton and Ruwase, Olatunji and Smith, Shaden and Zhang, Minjia and Rasley, Jeff and others},
+  booktitle={SC22: International Conference for High Performance Computing, Networking, Storage and Analysis},
+  pages={1--15},
+  year={2022},
+  organization={IEEE}
+}
+
+
+@inproceedings{ktransformer,
+  title={Ktransformers: Unleashing the full potential of cpu/gpu hybrid inference for moe models},
+  author={Chen, Hongtao and Xie, Weiyu and Zhang, Boxin and Tang, Jingqi and Wang, Jiahao and Dong, Jianwei and Chen, Shaoyuan and Yuan, Ziwei and Lin, Chen and Qiu, Chengyu and others},
+  booktitle={Proceedings of the ACM SIGOPS 31st Symposium on Operating Systems Principles},
+  pages={1014--1029},
+  year={2025}
+}
+
+
+@article{fusco,
+  title={FUSCO: High-Performance Distributed Data Shuffling via Transformation-Communication Fusion},
+  author={Zhu, Zhuoran and Zhu, Chunyang and Lin, Hao and Fu, Xu and Zhou, Yiming and Zhang, Quanlu and Li, Zhenhua and Qian, Feng and Yu, Chao and Li, Boxun and others},
+  journal={arXiv preprint arXiv:2512.22036},
+  year={2025}
+}
+
+@inproceedings{megascale,
+  title={Megascale-infer: Efficient mixture-of-experts model serving with disaggregated expert parallelism},
+  author={Zhu, Ruidong and Jiang, Ziheng and Jin, Chao and Wu, Peng and Stuardo, Cesar A and Wang, Dongyang and Zhang, Xinlei and Zhou, Huaping and Wei, Haoran and Cheng, Yang and others},
+  booktitle={Proceedings of the ACM SIGCOMM 2025 Conference},
+  pages={592--608},
+  year={2025}
+}
+
+
+#------------------LLM -------------------------
+
+@inproceedings{megatron,
+  title={Efficient large-scale language model training on gpu clusters using megatron-lm},
+  author={Narayanan, Deepak and Shoeybi, Mohammad and Casper, Jared and LeGresley, Patrick and Patwary, Mostofa and Korthikanti, Vijay and Vainbrand, Dmitri and Kashinkunti, Prethvi and Bernauer, Julie and Catanzaro, Bryan and others},
+  booktitle={Proceedings of the international conference for high performance computing, networking, storage and analysis},
+  pages={1--15},
+  year={2021}
+}
+
+@article{llama,
+  title={Llama: Open and efficient foundation language models},
+  author={Touvron, Hugo and Lavril, Thibaut and Izacard, Gautier and Martinet, Xavier and Lachaux, Marie-Anne and Lacroix, Timoth{\'e}e and Rozi{\`e}re, Baptiste and Goyal, Naman and Hambro, Eric and Azhar, Faisal and others},
+  journal={arXiv preprint arXiv:2302.13971},
+  year={2023}
+}
+
+
+
